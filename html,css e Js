@@ -1,0 +1,62 @@
+html
+<nav>
+  <form>
+    <h1>Simulado de gastos</h1>
+  
+</form>
+    </nav>
+  <article class='desenvolvimento'>
+    <h3>Quantidade:</h3>
+    <input type= 'number' name= 'text' id= 'text01'>
+    <input type= 'button' value= 'verifica' onclick= 'calcular()'>
+    
+  </article>
+  
+<div id='final'> Resultado </div>
+
+<article class= 'desenvolvimento' >
+  <h3>Nacionalidade</h3>
+  <input name= 'name' id= 'name'>
+  <input type= 'button' value= 'verfica' id= 'verifica' onclick = 'clicar()' >
+</article>
+<div id= 'resultado'>Resultado</div>
+  
+  css:
+  
+body{margin:0;}
+form{
+  text-align:center; 
+  color:white;
+  line-height:60px;
+  height:70px;
+  background:blue;}
+.desenvolvimento{padding:10px;}
+
+JavaScript:
+
+function calcular() {
+  var valor
+valor = document.querySelector('input#text01')
+var res
+res = document.querySelector('div#final')
+
+var calculo
+calculo = Number(valor.value)
+res.innerHTML = `Sua propoção foi de: <strong>${calculo}</strong> %`
+if(calculo > 80){res.innerHTML += ' Essa quantidade é alta cuidado' }else{res.innerHTML= 'Lembre se do limite que é subjetivo,mas não quer dizer que não exista'}
+}
+
+//Nascionalide
+function clicar(){
+  var origem
+  origem = document.querySelector('input#name')
+  var res
+  res = document.querySelector('div#resultado')
+  var analise
+  analise = (origem.value)
+  res.innerHTML = `Então voce é : ${analise}`
+  
+  if(analise == 'Brasileiro'){res.innerHTML = "Voce é brasileiro"}else{res.innerHTML = 'Voce é da burguesia né'}
+  
+  
+}
